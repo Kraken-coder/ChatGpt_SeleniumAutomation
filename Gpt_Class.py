@@ -8,8 +8,8 @@ from selenium.webdriver.common.keys import Keys
 
 class Mygpt:
     def __init__(self, *path):
-        self.responseThemePathLight = "//*[@class='markdown prose w-full break-words dark:prose-invert light'][last()]"
-        self.responseThemePathDark = "//*[@class='markdown prose w-full break-words dark:prose-invert dark'][last()]"
+        self.responseThemePathLight = "(//div[contains(@class, 'group/conversation-turn') and contains(@class, 'relative') and contains(@class, 'flex') and contains(@class, 'w-full') and contains(@class, 'min-w-0') and contains(@class, 'flex-col') and contains(@class, 'agent-turn')])[last()]//div[contains(@class, 'flex-col') and contains(@class, 'gap-1') and contains(@class, 'md:gap-3')]/div[contains(@class, 'flex') and contains(@class, 'flex-grow') and contains(@class, 'flex-col') and contains(@class, 'max-w-full')]/div/div"
+        self.responseThemePathDark = "(//div[contains(@class, 'group/conversation-turn') and contains(@class, 'relative') and contains(@class, 'flex') and contains(@class, 'w-full') and contains(@class, 'min-w-0') and contains(@class, 'flex-col') and contains(@class, 'agent-turn')])[last()]//div[contains(@class, 'flex-col') and contains(@class, 'gap-1') and contains(@class, 'md:gap-3')]/div[contains(@class, 'flex') and contains(@class, 'flex-grow') and contains(@class, 'flex-col') and contains(@class, 'max-w-full')]/div/div"
         self.currentTheme = self.responseThemePathDark
         if len(path) != 0:
             self.driver = webdriver.Chrome(path[0])
